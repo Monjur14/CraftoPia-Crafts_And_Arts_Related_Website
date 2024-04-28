@@ -12,6 +12,7 @@ import ContactUs from './Sections/ContactUs.jsx'
 import Reviews from './Components/Reviews.jsx'
 import CraftAndArt from './Sections/CraftAndArt.jsx'
 import AddItems from './Sections/AddItems.jsx'
+import MyList from './Sections/MyList.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,20 +33,16 @@ const router = createBrowserRouter([
         element: <RegisterPage/>
       },
       {
-        path: "/contactus",
-        element: <ContactUs/>
-      },
-      {
-        path: "/reviews",
-        element: <Reviews/>
-      },
-      {
         path: "/artandcraft",
         element: <CraftAndArt/>
       },
       {
         path: "/additem",
         element: <AddItems/>
+      },
+      {
+        path: "/mylist",
+        element: <MyList/>
       }
     ]
   }

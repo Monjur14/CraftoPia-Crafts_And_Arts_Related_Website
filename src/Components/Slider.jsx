@@ -18,7 +18,6 @@ export default function Slider() {
         <SwiperSlide><img src="https://i.ibb.co/rHCmht5/khara-woods-KR84-Rp-MCb0w-unsplash.jpg" alt="" /></SwiperSlide>
         <SwiperSlide><img src="https://i.ibb.co/c2z5w5d/painting-911804-1920.jpg" alt="" /></SwiperSlide>
         <SwiperSlide><img src="https://i.ibb.co/44FrbJM/russn-fckr-kr-V5a-S4j-Dj-A-unsplash.jpg" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="https://i.ibb.co/Lp88P5c/rachael-gorjestani-X6-CZGp-JBi8-U-unsplash.jpg" alt="" /></SwiperSlide>
       </Swiper>
     </>
   );

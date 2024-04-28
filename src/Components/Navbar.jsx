@@ -29,8 +29,8 @@ const Navbar = () => {
         <NavLink to={"/artandcraft"} className={({isActive}) => isActive ? "font-bold cursor-pointer text-blue-700" : "cursor-pointer"}>All Items</NavLink>
         {/* <NavLink to={"/contactus"} className={({isActive}) => isActive ? "font-bold cursor-pointer text-blue-700" : "cursor-pointer"}>Contact Us</NavLink> */}
         {user && <NavLink to={"/additem"} className={({isActive}) => isActive ? "font-bold cursor-pointer text-blue-700" : "cursor-pointer"}>Add Item</NavLink>}
-        {user && <NavLink to={"/updateProfile"} className={({isActive}) => isActive ? "font-bold cursor-pointer text-blue-700" : "cursor-pointer"}>Update Profile</NavLink>}
-        {user && <NavLink to={"/reviews"} className={({isActive}) => isActive ? "font-bold cursor-pointer text-blue-700" : "cursor-pointer"}>Reviews</NavLink>}
+        {user && <NavLink to={"/mylist"} className={({isActive}) => isActive ? "font-bold cursor-pointer text-blue-700" : "cursor-pointer"}>My List</NavLink>}
+        {/* {user && <NavLink to={"/reviews"} className={({isActive}) => isActive ? "font-bold cursor-pointer text-blue-700" : "cursor-pointer"}>Reviews</NavLink>} */}
       </ul>
       <div className="flex gap-4">
       <label className="cursor-pointer grid place-items-center" onClick={toggleTheme}>
