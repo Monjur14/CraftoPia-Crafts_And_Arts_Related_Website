@@ -8,11 +8,10 @@ import NotFound from './Components/NotFound.jsx'
 import Login from './Components/Login.jsx'
 import RegisterPage from './Components/RegisterPage.jsx'
 import FirebaseProvider from './FirebaseProvider/FirebaseProvider.jsx'
-import ContactUs from './Sections/ContactUs.jsx'
-import Reviews from './Components/Reviews.jsx'
 import CraftAndArt from './Sections/CraftAndArt.jsx'
 import AddItems from './Sections/AddItems.jsx'
 import MyList from './Sections/MyList.jsx'
+import DetailsPage from './Sections/DetailsPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/mylist",
         element: <MyList/>
+      },
+      {
+        path: "/details/:id",
+        element: <DetailsPage/>
       }
     ]
   }

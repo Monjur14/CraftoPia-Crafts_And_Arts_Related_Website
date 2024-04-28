@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 const CraftAndArt = () => {
 
@@ -28,8 +29,8 @@ const CraftAndArt = () => {
         <div className="w-full border p-2 rounded-md" key={item._id}>
       <img src={item.image} alt=""  className="h-56 w-full rounded-md"/>
       <h1 className="text-2xl font-bold my-2">{item.item_name}</h1>
-      <h3 className="text-lg font-semibold">Price: {item.price}$</h3>
-      <button  className="bg-blue-700 text-white font-semibold text-lg px-6 py-1 rounded-md mt-3">See Details</button>
+      <h3 className="text-lg font-semibold mb-3">Price: {item.price}$</h3>
+      <Link to={`/details/${item._id}`}  className="bg-blue-700 text-white font-semibold text-lg px-6 py-1 rounded-md">See Details</Link>
      </div>
       ))
      }

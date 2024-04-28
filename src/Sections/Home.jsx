@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Reviews from "../Components/Reviews";
 import Slider from "../Components/Slider";
 import ContactUs from "./ContactUs";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [allCraft, setAllCraft] = useState([]);
@@ -24,10 +25,10 @@ const Home = () => {
             <div className="w-full border p-2 rounded-md" key={item._id}>
               <img src={item.image} alt="" className="h-56 w-full rounded-md object-cover" />
               <h1 className="text-2xl font-bold my-2">{item.item_name}</h1>
-              <h3 className="text-lg font-semibold">Price: {item.price}$</h3>
-              <button className="bg-blue-700 text-white font-semibold text-lg px-6 py-1 rounded-md mt-3">
+              <h3 className="text-lg font-semibold mb-3">Price: {item.price}$</h3>
+              <Link to={`/details/${item._id}`} className="bg-blue-700 text-white font-semibold text-lg px-6 py-1 rounded-md">
                 See Details
-              </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -65,8 +66,15 @@ const Home = () => {
               </button>
             </div>
             <div className="w-full border p-2 rounded-md">
-              <img src='https://i.ibb.co/WVNMkSN/ai-generated-8113445-640.jpg' alt="" className="h-56 w-full rounded-md object-cover" />
+              <img src='https://i.ibb.co/fFrXdmM/ai-generated-7790635-1280.jpg' alt="" className="h-56 w-full rounded-md object-cover" />
               <h1 className="text-2xl font-bold my-2">Charcoal Sketching</h1>
+              <button className="bg-blue-700 text-white font-semibold text-lg px-6 py-1 rounded-md mt-3">
+                View
+              </button>
+            </div>
+            <div className="w-full border p-2 rounded-md">
+              <img src='https://i.ibb.co/brhxcRH/baby-3583707-640.jpg' alt="" className="h-56 w-full rounded-md object-cover" />
+              <h1 className="text-2xl font-bold my-2">Cartoon Drawing</h1>
               <button className="bg-blue-700 text-white font-semibold text-lg px-6 py-1 rounded-md mt-3">
                 View
               </button>
