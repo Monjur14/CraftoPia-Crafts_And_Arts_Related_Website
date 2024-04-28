@@ -1,0 +1,97 @@
+// {
+//     "image": "https://i.ibb.co/b6LBTGS/ai-generated-8659118-640.jpg",
+//     "item_name": "Farm Agriculture",
+//     "subcategory_name": "Landscape Painting",
+//     "short_description": "Farm agriculture involves cultivating crops, raising livestock, and managing land for food production. It utilizes natural resources like soil and water, employing techniques for sustainable growth and productivity.",
+//     "price": 99,
+//     "rating": 5,
+//     "customization": "Yes",
+//     "processing_time": "3-5 days",
+//     "stock_status": "In stock"
+// },
+// {
+//     "image": "https://i.ibb.co/PFWdHks/ai-generated-8580084-640.jpg",
+//     "item_name": "Cottage Moonlight",
+//     "subcategory_name": "Landscape Painting",
+//     "short_description": "Farm agriculture involves cultivating crops, raising livestock, and managing land for food production. It utilizes natural resources like soil and water, employing techniques for sustainable growth and productivity.",
+//     "price": 77,
+//     "rating": 4,
+//     "customization": "No",
+//     "processing_time": "2-3 days",
+//     "stock_status": "Made to Order"
+// },
+
+// {
+//     "image": "https://i.ibb.co/kH1KZRN/nature-3879647-1280.jpg",
+//     "item_name": "Forest Bird Painting",
+//     "subcategory_name": "Portrait Drawing",
+//     "short_description": "
+//     Forest Bird Painting captures the beauty of avian life in lush woodland settings. These paintings often showcase vibrant colors and intricate details, celebrating the enchanting presence of birds in their natural habitat.",
+//     "price": 88,
+//     "rating": 5,
+//     "customization": "No",
+//     "processing_time": "2-3 days",
+//     "stock_status": "Made to Order"
+// },
+// {
+//     "image": "https://i.ibb.co/F3WmbQn/adventure-3879655-1280.jpg",
+//     "item_name": "Adventure Nature Forest Painting",
+//     "subcategory_name": "Portrait Drawing",
+//     "short_description": "Adventure Nature Forest Painting depicts the serene yet adventurous essence of forests. These paintings often feature lush greenery, winding paths, and hidden wonders, evoking a sense of exploration and connection with nature's beauty.",
+//     "price": 57,
+//     "rating": 4,
+//     "customization": "Yes",
+//     "processing_time": "4-5 days",
+//     "stock_status": "In Stoke"
+// }
+
+
+// {
+//     "image": "https://i.ibb.co/80TH2xP/landscape-7404347-640.jpg",
+//     "item_name": "Landscape Old Building",
+//     "subcategory_name": "Watercolour Painting",
+//     "short_description": "Landscape Old Building paintings capture the timeless charm of historic architecture amidst natural landscapes. These artworks evoke nostalgia and tell stories of bygone eras through the weathered facades of old buildings nestled in scenic surroundings.",
+//     "price": 97,
+//     "rating": 5,
+//     "customization": "Yes",
+//     "processing_time": "4-5 days",
+//     "stock_status": "In Stoke"
+// }
+// {
+//     "image": "https://i.ibb.co/C2z4zqn/ai-generated-8710934-640.jpg",
+//     "item_name": "Summer Paris Bistro",
+//     "subcategory_name": "Watercolour Painting",
+//     "short_description": "Summer Paris Bistro paintings capture the vibrant ambiance of Parisian streets in summertime. These artworks depict charming bistros with colorful awnings, bustling outdoor seating, and the romantic atmosphere of a sunny day in Paris.",
+//     "price": 67,
+//     "rating": 4,
+//     "customization": "No",
+//     "processing_time": "3-5 days",
+//     "stock_status": "Made to Order"
+// }
+
+
+// {
+//     "image": "https://i.ibb.co/gT0tJZF/ai-generated-8685979-640.jpg",
+//     "item_name": "Boat Sailboat Sea",
+//     "subcategory_name": "Oil Painting",
+//     "short_description": "Boat Sailboat Sea paintings depict the tranquil beauty of sailboats navigating the open sea. These artworks often feature serene waters, billowing sails, and the sense of freedom and adventure associated with sailing.",
+//     "price": 65,
+//     "rating": 5,
+//     "customization": "No",
+//     "processing_time": "3-5 days",
+//     "stock_status": "Made to Order"
+// }
+// {
+//     "image": "https://i.ibb.co/pXk73Bp/ai-generated-8619395-640.png",
+//     "item_name": "Sunset Fantasy Flowers",
+//     "subcategory_name": "Oil Painting",
+//     "short_description": "Sunset Fantasy Flowers paintings combine the dreamy hues of a sunset with imaginative floral scenes. These artworks feature vibrant flowers against a backdrop of warm, magical skies, creating a sense of whimsy and enchantment.",
+//     "price": 97,
+//     "rating": 4,
+//     "customization": "Yes",
+//     "processing_time": "3-5 days",
+//     "stock_status": "In Stoke"
+// }
+
+
+

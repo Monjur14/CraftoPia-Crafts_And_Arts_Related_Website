@@ -1,9 +1,56 @@
+import UseAuth from "../CustomHook/UseAuth";
+
 const AddItems = () => {
+
+    const {user} = UseAuth()
+    
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target
-        alert(form.item_name.value)
+        const image = form.image.value;
+        const item_name = form.item_name.value;
+        const subcategory_Name = form.subcategory_Name.value;
+        const short_description = form.short_description.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const customization = form.customization.value;
+        const processing_time = form.processing_time.value;
+        const stockStatus = form.stockStatus.value;
+        const email = form.email.value;
+        const user_name = form.user_name.value;
+        
+        const addItem = {
+            image,
+            item_name,
+            subcategory_Name,
+            short_description,
+            price,
+            rating,
+            customization,
+            processing_time,
+            stockStatus,
+            email,
+            user_name
+            
+        }
+        
+
+        //send data to server
+        fetch("http://localhost:5000/items", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(addItem)
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            if(data.insertedId){
+                alert("successfully added to the database")
+            }
+        })
     }
 
   return (
@@ -23,13 +70,21 @@ const AddItems = () => {
             </div>
 
             <div className="flex gap-5 mt-5">
+                <div className="w-full flex flex-col">
+                    <label htmlFor="subcategory_Name" className="text-lg font-bold cursor-pointer">Subcategory</label>
+                    <select id="subcategory_Name" name="subcategory_Name" className="border border-gray-500 text-lg p-2 rounded-md w-full">
+                        <option value="">Enter the Subcategory</option>
+                        <option value="Landscape Painting">Landscape Painting</option>
+                        <option value="Portrait Drawing">Portrait Drawing</option>
+                        <option value="Watercolour Painting">Watercolour Painting</option>
+                        <option value="Oil Painting">Oil Painting</option>
+                        <option value="Charcoal Sketching">Charcoal Sketching</option>
+                        <option value="Cartoon Drawing">Cartoon Drawing</option>
+                    </select>
+                </div>  
                 <div className="w-full">
-                    <label htmlFor="subcategory_Name" className="text-lg font-bold cursor-pointer">Subcategory Name</label>
-                    <input type="text" name="subcategory_Name" id="subcategory_Name" className="border border-gray-500 text-lg p-2 rounded-md w-full"/>
-                </div>
-                <div className="w-full">
-                    <label htmlFor="short description" className="text-lg font-bold cursor-pointer">Short Description</label>
-                    <input type="text" name="short description" id="short description" className="border border-gray-500 text-lg p-2 rounded-md w-full"/>
+                    <label htmlFor="short_description" className="text-lg font-bold cursor-pointer">Short Description</label>
+                    <input type="text" name="short_description" id="short_description" className="border border-gray-500 text-lg p-2 rounded-md w-full"/>
                 </div>                
             </div>
 
@@ -68,7 +123,7 @@ const AddItems = () => {
 
             <div className="flex gap-5 mt-5">
             <div className="w-full flex flex-col">
-                    <label htmlFor="stockStatus" className="text-lg font-bold cursor-pointer">Customization</label>
+                    <label htmlFor="stockStatus" className="text-lg font-bold cursor-pointer">Stock Status</label>
                     <select id="stockStatus" name="stockStatus" className="border border-gray-500 text-lg p-2 rounded-md w-full">
                         <option value="">Give the Status</option>
                         <option value="In Stock">In Stock</option>
@@ -80,16 +135,16 @@ const AddItems = () => {
             <div className="flex gap-5 mt-5">
                 <div className="w-full">
                     <label htmlFor="email" className="text-lg font-bold cursor-pointer">Your Email</label>
-                    <input type="email" name="email" id="email" className="border border-gray-500 text-lg p-2 rounded-md w-full"/>
+                    <input type="email" name="email" id="email" value={user.email} className="border border-gray-500 text-lg p-2 rounded-md w-full"/>
                 </div>
                 <div className="w-full">
                     <label htmlFor="user_name" className="text-lg font-bold cursor-pointer">Your Name</label>
-                    <input type="text" name="user_name" id="user_name" className="border border-gray-500 text-lg p-2 rounded-md w-full"/>
+                    <input type="text" name="user_name" id="user_name" value={user.displayName} className="border border-gray-500 text-lg p-2 rounded-md w-full"/>
                 </div>                
             </div>
 
             <div className="mt-5 mb-10 w-full flex justify-center">
-            <button type="submit"  className="bg-blue-700 text-white font-semibold text-xl px-8 py-2 rounded-md hidden lg:block">Add Item</button>
+            <button type="submit"  className="bg-blue-700 text-white font-semibold text-xl px-8 py-2 rounded-md">Add Item</button>
             </div>
         </form>
     </div>
