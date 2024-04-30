@@ -23,8 +23,8 @@ const DetailsPage = () => {
   }, [allCraft, id]);
 
   return (
-    <div className="contain">
-      <div className="flex mt-10 gap-5">
+    <div className="contain px-2 md:px-3 lg:px-0">
+      <div className="flex flex-col lg:flex-row my-3 lg:mt-10 gap-5">
         <div className="basis-1/2">
           {single && <img src={single.image} alt="" className="object-cover h-96 w-full" />}
         </div>

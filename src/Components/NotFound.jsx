@@ -23,7 +23,7 @@ const NotFound = () => {
           </p>
           <Link
             rel="noopener noreferrer"
-            to={'/home'}
+            to={'/'}
             className="px-8 py-3 font-semibold rounded"
           >
             Back to homepage

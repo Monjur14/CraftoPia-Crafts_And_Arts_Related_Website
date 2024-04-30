@@ -80,7 +80,7 @@ const Login = () => {
 				{errors.password && <span className='text-sm text-red-600 font-semibold'>This field is required</span>}
 			</div>
 		</div>
-		<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-blue-600 text-white">Sign in</button>
+		<button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-cyan-600 text-white">Sign in</button>
 	</form>
     <p className="text-md text-center mt-3">Dont have account?
 		<Link to={"/register"} rel="noopener noreferrer" className="focus:underline hover:underline font-semibold"> Sign up here</Link>

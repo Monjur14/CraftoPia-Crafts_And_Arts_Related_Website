@@ -81,7 +81,7 @@ const RegisterPage = () => {
 				{errors.password && <span className='text-sm text-red-600 font-semibold'>This field is required</span>}
 			</div>
 		</div>
-		<button type="submit" className="w-full mt-5 px-8 py-3 font-semibold rounded-md bg-blue-600 text-white">Sign Up</button>
+		<button type="submit" className="w-full mt-5 px-8 py-3 font-semibold rounded-md bg-cyan-600 text-white">Sign Up</button>
 	</form>
     <p className="text-md text-center mt-3">Already have account?
 		<Link to={"/login"} rel="noopener noreferrer" className="focus:underline hover:underline font-semibold"> Sign In here</Link>

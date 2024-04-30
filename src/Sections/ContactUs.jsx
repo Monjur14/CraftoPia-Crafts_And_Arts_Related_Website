@@ -40,11 +40,11 @@ const ContactUs = () => {
 				<span className="mb-1">Email address</span>
 				<input type="email" placeholder="leroy@jenkins.com" className="block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75" />
 			</label>
-			<label className="block">
+			<label className="block ">
 				<span className="mb-1">Message</span>
-				<textarea rows="3" className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100"></textarea>
+				<textarea rows="3" className="block border w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100"></textarea>
 			</label>
-			<button type="button" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-blue-600 text-white font-semibold">Submit</button>
+			<button type="button" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-cyan-600 text-white font-semibold">Submit</button>
 		</form>
 	</div>	
 </section>

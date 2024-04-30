@@ -12,6 +12,9 @@ import CraftAndArt from './Sections/CraftAndArt.jsx'
 import AddItems from './Sections/AddItems.jsx'
 import MyList from './Sections/MyList.jsx'
 import DetailsPage from './Sections/DetailsPage.jsx'
+import Category from './Sections/Category.jsx'
+import UpdateItem from './Sections/UpdateItem.jsx'
+import PrivateRoute from './Components/PrivateRoute.jsx'
 
 const router = createBrowserRouter([
   {
@@ -41,11 +44,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/mylist",
-        element: <MyList/>
+        element: <PrivateRoute><MyList></MyList></PrivateRoute>
       },
       {
         path: "/details/:id",
-        element: <DetailsPage/>
+        element: <PrivateRoute><DetailsPage></DetailsPage></PrivateRoute>
+      },
+      {
+        path: "/category/:category",
+        element: <Category/>
+      },
+      {
+        path: '/update/:id',
+        element: <UpdateItem/>
       }
     ]
   }

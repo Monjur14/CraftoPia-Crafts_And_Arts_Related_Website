@@ -1,15 +1,16 @@
-import UseAuth from "../CustomHook/UseAuth";
+import { useParams } from "react-router-dom"
+import UseAuth from "../CustomHook/UseAuth"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-const AddItems = () => {
-
+import { useState } from "react"
+const UpdateItem = () => {
+    const [all, setAll] = useState(null)
     const {user} = UseAuth()
+    const {id} = useParams()
+    const handleUpdate = (e) => {
+        e.preventDefault();
     
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const form = e.target
+        const form = e.target;
         const image = form.image.value;
         const item_name = form.item_name.value;
         const subcategory_Name = form.subcategory_Name.value;
@@ -19,10 +20,8 @@ const AddItems = () => {
         const customization = form.customization.value;
         const processing_time = form.processing_time.value;
         const stockStatus = form.stockStatus.value;
-        const email = form.email.value;
-        const user_name = form.user_name.value;
-        
-        const addItem = {
+    
+        const updatedItem = {
             image,
             item_name,
             subcategory_Name,
@@ -31,34 +30,33 @@ const AddItems = () => {
             rating,
             customization,
             processing_time,
-            stockStatus,
-            email,
-            user_name
-            
-        }
-        
-
-        //send data to server
-        fetch("http://localhost:5000/items", {
-            method: "POST",
+            stockStatus
+        };
+    
+        fetch(`http://localhost:5000/items/${id}`, {
+            method: "PUT",
             headers: {
-                "content-type": "application/json"
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify(addItem)
+            body: JSON.stringify(updatedItem) // Corrected: Stringify the body
         })
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data)
-            if(data.insertedId){
-                toast.success("Successfully Added to Database");
+        .then(res => res.json())
+        .then(data => {
+            if (data.modifiedCount > 0) {
+                toast.success("Successfully Updated");
+                setAll(data);
+            } else {
+                toast.error("No changes made or item not found")
             }
         })
-    }
+        .catch(error => console.error("Error updating item:", error));
+    };
 
+    console.log(all)
   return (
-    <div className="contain">
-        <h1 className="text-4xl font-bold text-center mt-5">Add Craft Item</h1>
-        <form className="mt-6 px-2 md:mx-3 lg:px-0" onSubmit={handleSubmit}>
+    <div className="contain px-2 md:px-3 lg:px-0">
+        <h1 className="text-4xl font-bold text-center mt-5">Update Craft Items</h1>
+        <form className="mt-6" onSubmit={handleUpdate}>
 
             <div className="flex gap-5 flex-col md:flex-row">
                 <div className="w-full">
@@ -67,7 +65,7 @@ const AddItems = () => {
                 </div>
                 <div className="w-full">
                     <label htmlFor="item_name" className="text-lg font-bold cursor-pointer">Name</label>
-                    <input type="text" name="item_name" id="item_name" className="border border-gray-500 text-lg p-2 rounded-md w-full"/>
+                    <input type="text" name="item_name" id="item_name" className="border border-gray-500 text-lg p-2 rounded-md w-full" />
                 </div>                
             </div>
 
@@ -123,7 +121,7 @@ const AddItems = () => {
                 </div>                
             </div>
 
-            <div className="flex gap-5 mt-5">
+            <div className="flex gap-5 mt-5 flex-col md:flex-row">
             <div className="w-full flex flex-col">
                     <label htmlFor="stockStatus" className="text-lg font-bold cursor-pointer">Stock Status</label>
                     <select id="stockStatus" name="stockStatus" className="border border-gray-500 text-lg p-2 rounded-md w-full">
@@ -134,24 +132,13 @@ const AddItems = () => {
                 </div>             
             </div>
 
-            <div className="flex gap-5 mt-5 flex-col md:flex-row">
-                <div className="w-full">
-                    <label htmlFor="email" className="text-lg font-bold cursor-pointer">Your Email</label>
-                    <input type="email" name="email" id="email" value={user.email} className="border border-gray-500 text-lg p-2 rounded-md w-full"/>
-                </div>
-                <div className="w-full">
-                    <label htmlFor="user_name" className="text-lg font-bold cursor-pointer">Your Name</label>
-                    <input type="text" name="user_name" id="user_name" value={user.displayName} className="border border-gray-500 text-lg p-2 rounded-md w-full"/>
-                </div>                
-            </div>
-
             <div className="mt-5 mb-10 w-full flex justify-center">
-            <button type="submit"  className="bg-cyan-700 text-white font-semibold text-xl px-8 py-2 rounded-md">Add Item</button>
+            <button type="submit"  className="bg-cyan-700 text-white font-semibold text-xl px-8 py-2 rounded-md">Update Item</button>
             </div>
         </form>
         <ToastContainer />
     </div>
-  );
-};
+  )
+}
 
-export default AddItems;
+export default UpdateItem
