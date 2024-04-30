@@ -3,6 +3,7 @@ import Reviews from "../Components/Reviews";
 import Slider from "../Components/Slider";
 import ContactUs from "./ContactUs";
 import { Link } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 const Home = () => {
   const [allCraft, setAllCraft] = useState([]);
@@ -20,6 +21,7 @@ const Home = () => {
       <Slider />
       <div className="mt-10">
         <h1 className="text-4xl font-bold text-center">Craft & Art</h1>
+        
         <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {newArr.map((item) => (
             <div className="w-full border p-2 rounded-md" key={item._id}>
@@ -37,7 +39,8 @@ const Home = () => {
       <div>
         <h1 className="text-4xl font-bold text-center">Catagories</h1>
         <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div className="w-full border p-2 rounded-md">
+          <Fade cascade>
+          <div className="w-full border p-2 rounded-md">
               <img src='https://i.ibb.co/QNnvNXG/painting-7059647-1280.jpg' alt="" className="h-56 w-full rounded-md object-cover" />
               <h1 className="text-2xl font-bold my-2">Landscape Painting</h1>
               <Link to={"/category/Landscape Painting"}><button className="bg-cyan-700 text-white font-semibold text-lg px-6 py-1 rounded-md mt-3">
@@ -79,6 +82,9 @@ const Home = () => {
                 View
               </button></Link>
             </div>
+          </Fade>
+            
+            
         </div>
       </div>
       <ContactUs />
