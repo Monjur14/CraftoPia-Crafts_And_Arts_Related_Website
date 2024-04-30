@@ -8,6 +8,16 @@ const MyList = () => {
 
   const [allCraftArt, setAllCraftArt] = useState([])
     const [matched, setMatched] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+  
+      return () => clearTimeout(timer);
+    }, [])
+  
 
     useEffect(() => {
         fetch("https://server-side-rust.vercel.app/items")
@@ -112,7 +122,8 @@ const MyList = () => {
           <option value="No" className="cursor-pointer">No</option>
         </select>
       </div>
-      { matched.length > 0 ? <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {loading && <div className="flex justify-center items-center w-full h-96"><div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-cyan-700"></div></div>}
+      { matched.length > 0 && !loading ? <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {matched.map((item) => (
             <div className="w-full border p-2 rounded-md" key={item._id}>
               <img src={item.image} alt="" className="h-56 w-full rounded-md object-cover" />

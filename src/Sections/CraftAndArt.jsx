@@ -4,7 +4,15 @@ import { Link } from "react-router-dom"
 const CraftAndArt = () => {
 
   const [allItems, setAllItems] = useState([])
+  const [loading, setLoading] = useState(true)
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [])
 
 
   useEffect(() => {
@@ -19,7 +27,8 @@ const CraftAndArt = () => {
 
   return (
     <div className="contain">
-     <div className="p-2 mx-auto sm:p-4">
+		{loading && <div className="flex justify-center items-center w-full h-96"><div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-cyan-700"></div></div>}
+     {!loading && <div className="p-2 mx-auto sm:p-4">
 	<div className="overflow-x-auto">
 		<table className="min-w-full text-xsm lg:text-md lg:text-lg">
 			<colgroup>
@@ -85,7 +94,7 @@ const CraftAndArt = () => {
 			</tbody>
 		</table>
 	</div>
-</div>
+</div>}
     </div>
   )
 }
