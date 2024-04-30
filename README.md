@@ -1,31 +1,52 @@
-# Real Estate Website
-Name: GuestGuru. This project is a real estate website that allows users to explore and book hotels and resorts. It is built using React and integrates Firebase for authentication and data storage.
+# CraftoPia
+
+## Description
+Craftopia is an online hub for art and craft enthusiasts, offering a diverse range of handmade creations to explore and discover. From paintings to sculptures, users can connect with talented artisans, find inspiration for their own projects, and join a vibrant community of like-minded individuals. Craftopia is where creativity thrives
 
 ## Live Link
-[GuestGuru Website](https://celadon-babka-895a49.netlify.app/)
+[CraftoPia](https://assignment10-a.web.app/)
 
-## GitHub Repository
-[GitHub Repository](https://github.com/programming-hero-web-course-4/b9a9-real-estate-Monjur14)
 
 ## Key Features
 
-1. **Firebase Authentication Integration:** Implement secure user signup, login, and logout functionality using Firebase Authentication.
-   
-2. **Private Routes and Authorization:** Restrict access to specific pages or features to authenticated users through private routes, ensuring data security and privacy.
-   
-3. **Custom User Profiles:** Allow users to create and manage their profiles, enhancing personalization and providing a tailored experience.
-   
-4. **Extensive Listings:** Provide a wide range of hotel and resort listings for users to explore, showcasing various destinations and accommodations.
-   
-5. **Detailed Property Information:** Display comprehensive details for each hotel and resort, including descriptions, amenities, pricing, and location, enabling users to make informed decisions.
+1. **Firebase Authentication Integration:**
+   - Secure user signup, login, and logout functionality using Firebase Authentication.
+   - Custom user profiles for personalized experience.
+
+2. **Private Routes and Authorization:**
+   - Restrict access to specific pages or features to authenticated users through private routes.
+   - Ensure data security and privacy.
+
+3. **Art & Craft Listings:**
+   - Display a wide range of art and craft items for users to explore.
+   - Various categories and subcategories showcased.
+
+4. **Detailed Product Information:**
+   - Comprehensive details provided for each art and craft item.
+   - Includes images, item names, descriptions, prices, ratings, and stock status.
 
 ## NPM Packages Used
 
 - `react-router-dom`: For routing within the React application.
-- `swiper-slider`: For implementing the slider component for image galleries or carousels.
+- `react-awesome-reveal`: For adding reveal animations to elements.
 - `react-hook-form`: For building forms with easy validation in React.
-- `react-leaflet`: For integrating interactive maps into the application.
 - `react-toastify`: For displaying toast notifications in response to user actions.
 - `react-icons`: For adding icons to the user interface.
 - `firebase`: For integrating Firebase services such as authentication and database storage.
 
+## Additional Features
+
+1. **Art & Craft Categories Section:**
+   - Display at least 6 art & craft subcategories with images and information.
+   - Subcategories match with the art & craft data "subcategory_Name".
+
+2. **Subcategory Page:**
+   - User can click on a subcategory card to view all arts and crafts of that specific subcategory.
+   - Each art & craft item card includes image, item name, subcategory name, short description, price, rating, and a "View Details" button.
+
+3. **Dark/Light Theme Toggle:**
+   - Implement a toggle switch to switch between dark and light themes on the home page.
+
+4. **Additional Packages:**
+   - `react-awesome-reveal`: Implement reveal animations for elements on the home page.
+   - `react-tooltip`: Add tooltips to provide additional information for elements on the home page.
