@@ -8,7 +8,7 @@ const DetailsPage = () => {
   const [single, setSingle] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://server-side-rust.vercel.app/items")
       .then((res) => res.json())
       .then((data) => {
         setAllCraft(data);

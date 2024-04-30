@@ -39,7 +39,7 @@ const AddItems = () => {
         
 
         //send data to server
-        fetch("http://localhost:5000/items", {
+        fetch("https://server-side-rust.vercel.app/items", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

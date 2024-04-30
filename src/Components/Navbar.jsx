@@ -3,6 +3,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import UseAuth from "../CustomHook/UseAuth";
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 const Navbar = () => {
     const [nav, setNav] = useState(false)
@@ -23,7 +25,8 @@ const Navbar = () => {
     }, [theme])
   return (
     <div className="contain flex justify-between items-center py-2 lg:py-3 px-3 lg:px-0">
-      <Link to={"/"} className="text-[2rem] md:text-4xl font-semibold flex-1 lg:flex-none">Crafto<span className="text-cyan-700">pia</span></Link>
+      <Link to={"/"} data-tooltip-id="my-tooltip" data-tooltip-content="CraftoPia" className="text-[2rem] md:text-4xl font-semibold flex-1 lg:flex-none">Crafto<span className="text-cyan-700">Pia</span></Link>
+      <Tooltip id="my-tooltip" className="z-50"/>
       <ul className="gap-5 items-center text-xl hidden lg:flex"> 
         <NavLink to={"/"} className={({isActive}) => isActive ? "font-bold cursor-pointer text-cyan-700" : "cursor-pointer"}>Home</NavLink>
         <NavLink to={"/artandcraft"} className={({isActive}) => isActive ? "font-bold cursor-pointer text-cyan-700" : "cursor-pointer"}>All Items</NavLink>
@@ -31,14 +34,15 @@ const Navbar = () => {
         {user && <NavLink to={"/mylist"} className={({isActive}) => isActive ? "font-bold cursor-pointer text-cyan-700" : "cursor-pointer"}>My List</NavLink>}
       </ul>
       <div className="flex gap-4">
-      <label className="cursor-pointer grid place-items-center" onClick={toggleTheme}>
+      <label data-tooltip-id="my-tooltip2" data-tooltip-content="Toggle Dark or Light Mode" className="cursor-pointer grid place-items-center" onClick={toggleTheme}>
         <input type="checkbox" value="synthwave" className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"/>
         <svg className="col-start-1 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
         <svg className="col-start-2 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
       </label>
+      <Tooltip id="my-tooltip2" className="z-50"/>
       {
         user?.email ? <div className="flex justify-end flex-1 lg:flex-none gap-2 lg:mr-0">
-          <img src={user.photoURL || "https://i.ibb.co/N6p8fKX/user-icon-in-trendy-flat-style-isolated-on-grey-background-user-symbol-for-your-web-site-design-logo.jpg"} title={user.displayName} alt="" className="w-10 h-10 border-2 border-cyan-600 rounded-full cursor-pointer justify-self-end" /><Link to={"/"}><button onClick={logout} className="bg-cyan-700 text-white font-semibold text-lg px-5 py-1 rounded-md hidden lg:block">Logout</button></Link></div> : <div className="hidden lg:flex gap-4">
+          <img src={user.photoURL || "https://i.ibb.co/N6p8fKX/user-icon-in-trendy-flat-style-isolated-on-grey-background-user-symbol-for-your-web-site-design-logo.jpg"} data-tooltip-id="my-tooltip4" data-tooltip-content={user.displayName}  alt="" className="w-10 h-10 border-2 border-cyan-600 rounded-full cursor-pointer justify-self-end" /> <Tooltip id="my-tooltip4" className="z-50"/><Link to={"/"}><button data-tooltip-id="my-tooltip3" data-tooltip-content="Logout Now" onClick={logout} className="bg-cyan-700 text-white font-semibold text-lg px-5 py-1 rounded-md hidden lg:block">Logout</button></Link> <Tooltip id="my-tooltip3" className="z-50"/></div> : <div className="hidden lg:flex gap-4">
           <Link to={"/login"}><button className="border-cyan-700 border-2 px-5 py-1 rounded-md text-lg font-semibold">Login</button></Link>
           <Link to={"/register"} className="bg-cyan-700 text-white font-semibold text-lg px-5 py-1 rounded-md">Register</Link>
         </div>

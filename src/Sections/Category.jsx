@@ -7,7 +7,7 @@ const Category = () => {
 
     const { category } = useParams()
     useEffect(() => {
-        fetch("http://localhost:5000/items")
+        fetch("https://server-side-rust.vercel.app/items")
       .then((res) => res.json())
       .then((data) => {
         setAllArt(data)

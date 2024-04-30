@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const [allCraft, setAllCraft] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://server-side-rust.vercel.app/items")
       .then((res) => res.json())
       .then((data) => {
         setAllCraft(data);

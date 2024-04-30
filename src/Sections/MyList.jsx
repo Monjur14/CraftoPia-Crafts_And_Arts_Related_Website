@@ -10,7 +10,7 @@ const MyList = () => {
     const [matched, setMatched] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/items")
+        fetch("https://server-side-rust.vercel.app/items")
       .then((res) => res.json())
       .then((data) => {
         setAllCraftArt(data)
@@ -72,7 +72,7 @@ const MyList = () => {
           confirmButtonText: "Yes, delete it!"
         }).then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:5000/items/${id}`, {
+            fetch(`https://server-side-rust.vercel.app/items/${id}`, {
               method: "DELETE",
             })
             .then(res => res.json())

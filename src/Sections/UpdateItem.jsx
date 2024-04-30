@@ -33,7 +33,7 @@ const UpdateItem = () => {
             stockStatus
         };
     
-        fetch(`http://localhost:5000/items/${id}`, {
+        fetch(`https://server-side-rust.vercel.app/items/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

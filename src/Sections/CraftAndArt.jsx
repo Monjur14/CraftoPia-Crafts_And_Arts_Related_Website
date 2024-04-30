@@ -8,7 +8,7 @@ const CraftAndArt = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/items")
+    fetch("https://server-side-rust.vercel.app/items")
     .then(res => res.json())
     .then(data => {
       console.log(data)
