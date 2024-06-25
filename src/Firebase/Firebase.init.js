@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC7-oOHXetrnBuCKWsVD2HZznvP09nxNGg",
-  authDomain: "assignment10-a.firebaseapp.com",
-  projectId: "assignment10-a",
-  storageBucket: "assignment10-a.appspot.com",
-  messagingSenderId: "952375784594",
-  appId: "1:952375784594:web:6b9efff5d37999cff3224b"
+  apiKey: "AIzaSyBdrCqPE-8BhPiKbBcXkpo6z7gpIfiwDAI",
+  authDomain: "craftopia-m.firebaseapp.com",
+  projectId: "craftopia-m",
+  storageBucket: "craftopia-m.appspot.com",
+  messagingSenderId: "90480518395",
+  appId: "1:90480518395:web:d42229d6af2c8eab8ffc5e"
 };
 
 // Initialize Firebase

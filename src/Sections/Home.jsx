@@ -39,7 +39,7 @@ const Home = () => {
       <div>
         <h1 className="text-4xl font-bold text-center">Catagories</h1>
         <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          <Fade cascade>
+          <Fade>
           <div className="w-full border p-2 rounded-md">
               <img src='https://i.ibb.co/QNnvNXG/painting-7059647-1280.jpg' alt="" className="h-56 w-full rounded-md object-cover" />
               <h1 className="text-2xl font-bold my-2">Landscape Painting</h1>
