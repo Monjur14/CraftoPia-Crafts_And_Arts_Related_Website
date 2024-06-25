@@ -4,7 +4,7 @@
 Craftopia is an online hub for art and craft enthusiasts, offering a diverse range of handmade creations to explore and discover. From paintings to sculptures, users can connect with talented artisans, find inspiration for their own projects, and join a vibrant community of like-minded individuals. Craftopia is where creativity thrives
 
 ## Live Link
-[CraftoPia](https://assignment10-a.web.app/)
+[CraftoPia](https://crafto-pia.vercel.app/)
 
 
 ## Key Features
